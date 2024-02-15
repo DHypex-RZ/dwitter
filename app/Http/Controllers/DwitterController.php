@@ -31,4 +31,9 @@ class DwitterController extends Controller
 
       return to_route("inicio");
    }
+
+   public function eliminarDwitt(string $id):void
+   {
+      DB::table("dwitts")->delete($id);
+   }
 }

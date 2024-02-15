@@ -18,4 +18,5 @@ use Inertia\Inertia;
 */
 
 Route::get("/", [DwitterController::class, "vistaInicial"])->name("inicio");
-Route::post("/nuevo-dwitt", [DwitterController::class, "insertarDwitt"])->name("nuevo.dwitt");
+Route::post("/dwitt/nuevo", [DwitterController::class, "insertarDwitt"])->name("nuevo.dwitt");
+Route::delete("dwitt/eliminar/{id}", [DwitterController::class, "eliminarDwitt"])->name("eliminar.dwitt");
