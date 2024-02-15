@@ -1,7 +1,10 @@
+import Boton from "@/Layout/Dwitt/Boton.jsx";
+import {router} from "@inertiajs/react";
+
 export default function Dwitt({dwitt}) {
    return (
       <article
-               className="bg-gray-800 p-4 text-white rounded-lg scale-90 hover:scale-100 transition duration-500
+         className="bg-gray-800 p-4 text-white rounded-lg scale-90 hover:scale-100 transition duration-500
                hover:shadow-xl hover:shadow-gray-700"
       >
          <header
@@ -25,8 +28,28 @@ export default function Dwitt({dwitt}) {
          <footer
             className="text-right"
          >
+            <div
+               className="absolute"
+            >
+               <Boton
+                  posicion={"left-0"}
+                  texto={"Eliminar"}
+                  funcion={eliminarDwitt}
+               />
+               <Boton
+                  posicion={"left-20"}
+                  texto={"Editar"}
+                  funcion={() => {
+                     console.log("en proceso")
+                  }}
+               />
+            </div>
             {dwitt.fecha}
          </footer>
       </article>
    )
+
+   function eliminarDwitt() {
+      router.delete(route("eliminar.dwitt", dwitt.id))
+   }
 }
