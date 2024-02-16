@@ -1,3 +1,5 @@
+import {Button} from "@nextui-org/react";
+
 export default function Cabecera() {
    return (
       <header
@@ -5,6 +7,7 @@ export default function Cabecera() {
       ><h1
          className="font-extrabold text-5xl"
       >Dwitter</h1>
+         <Button>Hola</Button>
       </header>
    )
 }
